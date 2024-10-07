@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    --linaria-theme_palette-rausch: #FF385C;
+    --header_brand-color: var(--linaria-theme_palette-rausch);
+}

@@ -1,3 +1,14 @@
+import Icon from "../components/Icon";
 export default function Home() {
-  return <main></main>;
+  return (
+    <>
+      <header>
+        <nav>
+          <div class="text-header_brand-color">
+            <Icon />
+          </div>
+        </nav>
+      </header>
+    </>
+  );
 }
