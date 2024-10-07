@@ -4,7 +4,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "header_brand-color": "var(--header_brand-color)",
+        "linaria-theme_palette-rausch": "var(--linaria-theme_palette-rausch)",
+        "linaria-theme_palette-bebe": "var(--linaria-theme_palette-bebe)",
+        "header_brand-color": "var(--linaria-theme_palette-rausch)",
       },
     },
   },

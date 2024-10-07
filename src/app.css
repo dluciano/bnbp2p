@@ -4,5 +4,5 @@
 
 :root{
     --linaria-theme_palette-rausch: #FF385C;
-    --header_brand-color: var(--linaria-theme_palette-rausch);
+    --linaria-theme_palette-bebe: #EBEBEB;
 }
