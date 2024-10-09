@@ -7,11 +7,11 @@ const PillButton: ParentComponent<Props> = (props) => {
     <button
       {...inputProps}
       class={twMerge(
-        "hover:bg-linaria-theme_palette-bebe hover:rounded-3xl",
+        "hover:bg-linaria-theme_palette-bebe rounded-full px-4 py-3",
         otherProps.class
       )}
     >
-      <div class="mx-4 my-3">{otherProps.children}</div>
+      {otherProps.children}
     </button>
   );
 };

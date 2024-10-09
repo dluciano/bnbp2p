@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       colors: {
         "linaria-theme_palette-rausch": "var(--linaria-theme_palette-rausch)",
+        "linaria-theme_palette-rausch-contrast": "var(--linaria-theme_palette-rausch-contrast)",
         "linaria-theme_palette-bebe": "var(--linaria-theme_palette-bebe)",
         "header_brand-color": "var(--linaria-theme_palette-rausch)",
       },
