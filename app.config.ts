@@ -1,3 +1,7 @@
 import { defineConfig } from "@solidjs/start/config";
-
-export default defineConfig({});
+import devtools from "solid-devtools/vite";
+export default defineConfig({
+  vite: {
+    plugins: [devtools({ autoname: true })],
+  },
+});

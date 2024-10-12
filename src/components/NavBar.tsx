@@ -4,7 +4,7 @@ import Icon from "./Icon";
 import { twMerge } from "tailwind-merge";
 import { HeroSearch } from "./HeroSearch/HeroSearch";
 import { ParentComponent, Show, useContext } from "solid-js";
-import { context } from "./ModalController";
+import { context } from "./MainWindowController";
 import Dropdown from "./Dropdown";
 
 type Props = {

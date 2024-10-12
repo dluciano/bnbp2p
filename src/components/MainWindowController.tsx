@@ -39,6 +39,7 @@ export const MainWindowController: ParentComponent = (props) => {
       close();
     };
   });
+
   return (
     <context.Provider value={{ open, close, state: focusElement }}>
       {props.children}

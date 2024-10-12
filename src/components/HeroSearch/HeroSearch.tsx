@@ -1,6 +1,6 @@
 import { createMemo, Show, useContext } from "solid-js";
 import { twMerge } from "tailwind-merge";
-import { context } from "../ModalController";
+import { context } from "../MainWindowController";
 import DestinationAutocomplete from "./DestinationAutocomplete/DestinationAutocomplete";
 import Divisor from "./Divisor";
 import GuestsInput from "./GuestsInput/GuestsInput";
@@ -29,6 +29,7 @@ export function HeroSearch(props: Props) {
         cur == whoRef)
     );
   });
+
   return (
     <form
       class={twMerge(
@@ -47,7 +48,7 @@ export function HeroSearch(props: Props) {
         tabIndex={1}
         ref={whereRef}
         role="button"
-        onclick={() => {
+        onclick={(e) => {
           open(whereRef);
           whereInputRef.focus();
         }}
