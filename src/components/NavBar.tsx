@@ -2,7 +2,7 @@ import { A } from "@solidjs/router";
 import PillButton from "./PillButton";
 import Icon from "./Icon";
 import { twMerge } from "tailwind-merge";
-import { HeroSearch } from "./HeroSearch";
+import { HeroSearch } from "./HeroSearch/HeroSearch";
 import { ParentComponent, Show, useContext } from "solid-js";
 import { context } from "./ModalController";
 import Dropdown from "./Dropdown";

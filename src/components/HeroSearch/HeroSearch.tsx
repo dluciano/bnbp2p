@@ -1,19 +1,12 @@
 import { createMemo, Show, useContext } from "solid-js";
 import { twMerge } from "tailwind-merge";
-import { context } from "./ModalController";
+import { context } from "../ModalController";
+import DestinationAutocomplete from "./DestinationAutocomplete/DestinationAutocomplete";
+import Divisor from "./Divisor";
 
 type Props = {
   class?: string;
 };
-const Divisor = () => (
-  <div class="flex items-center">
-    <div class="h-10 bg-gray-300 w-[1px]"></div>
-  </div>
-);
-
-const menus = ["where", "checkin", "checkout", "who"] as const;
-
-type Menus = (typeof menus)[number];
 
 // TODO: When click over one of the inputs (active), the button is white, has shadow and contains a x button on the middle right, also the HeroSearch becomes gray
 export function HeroSearch(props: Props) {
@@ -38,14 +31,14 @@ export function HeroSearch(props: Props) {
   return (
     <form
       class={twMerge(
-        `flex border border-gray-200 rounded-full shadow-md hover:cursor-pointer ${
-          isMenuFocus() ? "bg-gray-200" : ""
+        `flex border border-gray-100 rounded-full shadow-md hover:cursor-pointer ${
+          isMenuFocus() ? "bg-gray-100" : ""
         }`,
         props.class
       )}
     >
       <div
-        class={`rounded-full px-6 py-2 ${
+        class={`relative rounded-full px-6 py-2 ${
           state() && state() == whereRef
             ? "bg-white shadow-xl"
             : "hover:bg-gray-200"
@@ -71,7 +64,12 @@ export function HeroSearch(props: Props) {
           ref={whereInputRef}
           placeholder={"Search destinations"}
           class="w-full bg-inherit focus-visible:outline-none text-xs hover:cursor-pointer"
+          autocomplete={"off"}
+          autocorrect="off"
         />
+        <Show when={state() && state() == whereRef}>
+          <DestinationAutocomplete />
+        </Show>
       </div>
       <Show when={state() && state() != whereRef && state() != checkinRef}>
         <Divisor />
@@ -139,7 +137,7 @@ export function HeroSearch(props: Props) {
       </Show>
 
       <div
-        class={`rounded-full  pl-8 pr-2 py-2 flex ${
+        class={`rounded-full relative pl-8 pr-2 py-2 flex ${
           state() && state() == whoRef
             ? "bg-white shadow-xl"
             : "hover:bg-gray-200"
@@ -168,7 +166,7 @@ export function HeroSearch(props: Props) {
         </div>
         <button
           type="submit"
-          class="flex justify-center items-center rounded-full min-w-12 w-12 h-12 relative bg-header_brand-color grow active:bg-linaria-theme_palette-rausch-contrast cursor-pointer"
+          class="flex justify-center items-center rounded-full min-w-12 w-12 h-12  bg-header_brand-color grow active:bg-linaria-theme_palette-rausch-contrast cursor-pointer"
           onclick={(e) => {
             e.stopImmediatePropagation();
             e.preventDefault();
