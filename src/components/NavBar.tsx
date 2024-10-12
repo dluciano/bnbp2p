@@ -5,6 +5,7 @@ import { twMerge } from "tailwind-merge";
 import { HeroSearch } from "./HeroSearch";
 import { ParentComponent, Show, useContext } from "solid-js";
 import { context } from "./ModalController";
+import Dropdown from "./Dropdown";
 
 type Props = {
   class?: string;
@@ -47,11 +48,7 @@ const MainNavButton = () => {
         <span class="iconify carbon--user-avatar-filled-alt"></span>
       </button>
       <Show when={state() && state() == containerRef}>
-        <nav
-          class={
-            "rounded-2xl text-nowrap shadow-sm absolute py-3 right-0 mt-2 border border-gray-100  bg-white z-10"
-          }
-        >
+        <Dropdown>
           <ul>
             <MenuItem class="hover:cursor-pointer">
               <A href="">Sign up</A>
@@ -73,7 +70,7 @@ const MainNavButton = () => {
               <A href="">Help Centre</A>
             </MenuItem>
           </ul>
-        </nav>
+        </Dropdown>
       </Show>
     </div>
   );
