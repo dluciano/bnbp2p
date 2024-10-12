@@ -3,6 +3,7 @@ import { twMerge } from "tailwind-merge";
 import { context } from "../ModalController";
 import DestinationAutocomplete from "./DestinationAutocomplete/DestinationAutocomplete";
 import Divisor from "./Divisor";
+import GuestsInput from "./GuestsInput/GuestsInput";
 
 type Props = {
   class?: string;
@@ -163,6 +164,9 @@ export function HeroSearch(props: Props) {
             class="w-full bg-inherit text-xs focus-visible:outline-none hover:cursor-pointer"
             readonly
           />
+          <Show when={state() && state() == whoRef}>
+            <GuestsInput />
+          </Show>
         </div>
         <button
           type="submit"
